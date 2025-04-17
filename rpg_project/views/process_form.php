@@ -4,19 +4,7 @@ require_once __DIR__ . '/../src/Entity/Guerrier.php';
 require_once __DIR__ . '/../src/Entity/Mage.php';
 require_once __DIR__ . '/../src/Entity/Archer.php';
 require_once __DIR__ . '/../src/Utilitaire/Utilitaire.php';
-
-// Database connection
-$dbName = 'projectRPG';
-$server = '127.0.0.2';
-$username = 'root';
-$password = '';    
-
-try {
-    $pdo = new PDO("mysql:host=$server;dbname=$dbName;charset=utf8", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Erreur de connexion à la base de données : " . $e->getMessage());
-}
+require_once __DIR__ . '/../config/database.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupérer et valider les données

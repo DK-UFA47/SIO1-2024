@@ -9,6 +9,7 @@
     <body>
         <?php
         require_once 'views/partials/header.php';
+        require_once 'config/database.php';
 
         // Database connection info
         $dbName = 'projectRPG';
