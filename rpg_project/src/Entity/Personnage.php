@@ -2,8 +2,8 @@
 abstract class Personnage {
     public $pseudo;
     public bool $genre;
-    public $force;
-    public $agilite;
+    private $force;
+    private $agilite;
 
     public function __construct($pseudo, $genre, $force, $agilite) {
         $this->pseudo = $pseudo;

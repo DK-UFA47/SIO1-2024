@@ -7,7 +7,7 @@ require_once __DIR__ . '/../src/Utilitaire/Utilitaire.php';
 
 // Database connection
 $dbName = 'projectRPG';
-$server = 'locahost';
+$server = '127.0.0.2';
 $username = 'root';
 $password = '';    
 

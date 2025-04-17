@@ -12,7 +12,7 @@
 
         // Database connection info
         $dbName = 'projectRPG';
-        $server = 'localhost';
+        $server = '127.0.0.2';
         $username = 'root';
         $password = '';
 

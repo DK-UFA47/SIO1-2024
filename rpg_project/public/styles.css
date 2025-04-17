@@ -7,26 +7,6 @@ body {
     color: #333;
 }
 
-/* Navigation bar */
-nav {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin-right: 15px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
 /* Page content */
 h1 {
     text-align: center;
@@ -41,31 +21,41 @@ p {
 
 /* Character grid container */
 .character-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two cards per row */
     gap: 20px;
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Character card */
 .character {
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    width: 300px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    outline: 2px solid #ccc; /* Outline for better separation */
+}
+
+.character:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    outline-color: #888; /* Change outline color on hover */
 }
 
 .character h2 {
-    margin: 0;
+    margin: 0 0 10px;
     color: #555;
 }
 
 .character p {
     margin: 5px 0;
+    color: #666;
+    font-size: 14px;
 }
 
 /* Footer */
