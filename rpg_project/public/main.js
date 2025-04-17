@@ -1,0 +1,1 @@
+// Fichier JavaScript pour les interactions
