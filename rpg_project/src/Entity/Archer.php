@@ -1,9 +1,8 @@
 <?php
 require_once 'Personnage.php';
-require_once 'src/Interface/Combatant.php';
+require_once __DIR__ . '/../Interface/Combatant.php';
 
 class Archer extends Personnage implements Combatant {
-    // Implémentation de la méthode attaquer()
     public function attaquer() {
         return "{$this->pseudo} tire une flèche avec une précision de {$this->agilite} !";
     }

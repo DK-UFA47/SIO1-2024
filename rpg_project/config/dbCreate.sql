@@ -10,6 +10,6 @@ CREATE TABLE IF NOT EXISTS `Personnages` (
 );
 
 INSERT INTO `Personnages` (`pseudo`, `type`, `genre`, `force`, `agilite`) VALUES
-('Aragorn', 'Guerrier', 1, 120, 40),
+('Carole', 'Guerrier', 1, 120, 40),
 ('Gandalf', 'Mage', 0, 50, 100),
 ('Legolas', 'Archer', 0, 80, 120);

@@ -15,14 +15,13 @@
         <select id="genre" name="genre" required>
             <option value="Homme">Homme</option>
             <option value="Femme">Femme</option>
-            <option value="Autre">Autre</option>
         </select><br><br>
 
         <label for="force">Force :</label>
-        <input type="number" id="force" name="force" min="0" max="200" required><br><br>
+        <input type="number" id="force" name="force" min="0" required><br><br>
 
         <label for="agilite">Agilité :</label>
-        <input type="number" id="agilite" name="agilite" min="0" max="200" required><br><br>
+        <input type="number" id="agilite" name="agilite" min="0" required><br><br>
 
         <label for="type">Type de Personnage :</label>
         <select id="type" name="type" required>
