@@ -2,9 +2,11 @@
 
 class Utilitaire {
     public static function afficherPersonnage(Personnage $personnage) {
-        return "Pseudo: {$personnage->pseudo},
-        Genre: {$personnage->genre},
-        Force: {$personnage->force},
-        Agilité: {$personnage->agilite}";
+        $genre = $personnage->getGenre() ? 'Femme' : 'Homme';
+        return
+            "Pseudo: {$personnage->getPseudo()},
+            Genre: {$genre},
+            Force: {$personnage->getForce()},
+            Agilité: {$personnage->getAgilite()}";
     }
 }

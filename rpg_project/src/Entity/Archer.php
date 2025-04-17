@@ -1,6 +1,6 @@
 <?php
 require_once 'Personnage.php';
-require_once 'src/interfaces/Combatant.php';
+require_once 'src/Interface/Combatant.php';
 
 class Archer extends Personnage implements Combatant {
     // Implémentation de la méthode attaquer()

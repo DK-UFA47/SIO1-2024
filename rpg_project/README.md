@@ -13,7 +13,7 @@ Ce projet intègre des concepts avancés de POO, tels que :
 - **Surcharge** : Permet d'utiliser plusieurs méthodes avec le même nom mais des signatures différentes.
 - **Polymorphisme** : Permet d'utiliser des objets de différentes classes de manière interchangeable.
 - **Méthodes statiques** : Utilisées pour des opérations qui ne dépendent pas d'une instance de la classe.
-- **Interfaces** : Définissent des méthodes que les classes doivent implémenter.
+- **Interface** : Définissent des méthodes que les classes doivent implémenter.
 ## Interface Web
 Une interface web sera créée pour permettre aux utilisateurs de saisir les informations des personnages et de les enregistrer dans une base de données. Cette interface utilisera des requêtes et des méthodes de communication avec la base de données qui implémentent également la POO.
 ## Prérequis

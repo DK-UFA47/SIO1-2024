@@ -1,13 +1,13 @@
 <?php
-require_once 'src/controllers/Guerrier.php';
-require_once 'src/controllers/Mage.php';
-require_once 'src/controllers/Archer.php';
-require_once 'src/utils/Utilitaire.php';
+require_once 'src/Entity/Guerrier.php';
+require_once 'src/Entity/Mage.php';
+require_once 'src/Entity/Archer.php';
+require_once 'src/Utilitaire/Utilitaire.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupérer et valider les données
     $pseudo = htmlspecialchars($_POST['pseudo']);
-    $genre = htmlspecialchars($_POST['genre']);
+    $genre = (bool) $_POST['genre'];
     $force = filter_var($_POST['force'], FILTER_VALIDATE_INT);
     $agilite = filter_var($_POST['agilite'], FILTER_VALIDATE_INT);
     $type = htmlspecialchars($_POST['type']);
@@ -35,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Afficher les détails du personnage
     echo "<h1>Détails du Personnage</h1>";
     echo "<p>" . Utilitaire::afficherPersonnage($personnage) . "</p>";
+    echo "<br>";
     echo "<p>" . $personnage->attaquer() . "</p>";
 
     if ($personnage instanceof Combatant) {
