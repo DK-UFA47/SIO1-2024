@@ -1,0 +1,1 @@
+<!-- Pied de page commun -->
