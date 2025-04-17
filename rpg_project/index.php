@@ -10,25 +10,25 @@
         <?php
         require_once 'views/partials/header.php';
 
-        // Database connection
+        // Database connection info
         $dbName = 'projectRPG';
         $server = 'localhost';
         $username = 'root';
         $password = '';
 
-        try {
+        try { // Databse connection
             $pdo = new PDO("mysql:host=$server;dbname=$dbName;charset=utf8", $username, $password);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             die("Erreur de connexion à la base de données : " . $e->getMessage());
         }
 
-        // Fetch data from the database
+        // Recup données 
         $stmt = $pdo->query("SELECT * FROM Personnages");
         $personnages = [];
 
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            // Dynamically create objects based on the 'type' column
+            // Création des personnages en fonction de leur type
             switch ($row['type']) {
                 case 'Guerrier':
                     $personnages[] = new Guerrier($row['pseudo'], $row['genre'], $row['force'], $row['agilite']);
@@ -40,12 +40,11 @@
                     $personnages[] = new Archer($row['pseudo'], $row['genre'], $row['force'], $row['agilite']);
                     break;
                 default:
-                    // Handle unknown types if necessary
                     break;
             }
-        }
-
-        // Display the personnages
+        }?>
+        <div class="character-grid">
+        <?php
         foreach ($personnages as $personnage) {
             echo "<div class='character'>";
             echo "<h2>" . $personnage->getPseudo() . "</h2>";
@@ -56,9 +55,10 @@
             }
             echo "</div>";
         }
-        
+
         require_once 'views/partials/footer.php';
         ?>
+        </div>
     </body>
 </html>
 
