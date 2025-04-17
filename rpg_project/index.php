@@ -4,15 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Personnages RPG</title>
+        <link rel="stylesheet" href="public/styles.css">
     </head>
     <body>
-        <nav>
-            <a href="index.php">Accueil</a>
-            <a href="views/personnage_form.php">Créer un Personnage</a>
-        </nav>
         <?php
         require_once 'views/partials/header.php';
-        require_once 'views/partials/footer.php';
 
         // Database connection
         $dbName = 'projectRPG';
@@ -51,13 +47,17 @@
 
         // Display the personnages
         foreach ($personnages as $personnage) {
+            echo "<div class='character'>";
+            echo "<h2>" . $personnage->getPseudo() . "</h2>";
             echo "<p>" . Utilitaire::afficherPersonnage($personnage) . "</p>";
             echo "<p>" . $personnage->attaquer() . "</p>";
-
             if ($personnage instanceof Combatant) {
                 echo "<p>" . $personnage->combattre() . "</p>";
             }
+            echo "</div>";
         }
+        
+        require_once 'views/partials/footer.php';
         ?>
     </body>
 </html>
