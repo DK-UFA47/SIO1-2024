@@ -1,4 +1,4 @@
 ## Helpfull commands :
 
 - npm run dev
-- npx tailwindcss -i ./app/styles/input.css -o ./app/styles/output.css --watch
+- npx tailwindcss -i ./public/styles/input.css -o ./public/styles/output.css --watch

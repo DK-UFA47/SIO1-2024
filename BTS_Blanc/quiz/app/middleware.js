@@ -4,18 +4,22 @@ import { getToken } from 'next-auth/jwt';
 export async function middleware(request) {
   const { pathname } = request.nextUrl;
 
+  const token = await getToken({ req: request, secret: process.env.NEXTAUTH_SECRET });
+
   if (
-    pathname.startsWith('/connexion') ||
-    pathname.startsWith('/inscription') ||
-    pathname.startsWith('/_next') ||
-    pathname.startsWith('/favicon.ico')
+    token &&
+    (pathname.startsWith('/connexion') || pathname.startsWith('/inscription'))
   ) {
-    return NextResponse.next();
+    return NextResponse.redirect(new URL('/', request.url));
   }
 
-  // Check for session token (NextAuth JWT)
-  const token = await getToken({ req: request, secret: process.env.NEXTAUTH_SECRET });
-  if (!token) {
+  if (
+    !token &&
+    !pathname.startsWith('/connexion') &&
+    !pathname.startsWith('/inscription') &&
+    !pathname.startsWith('/_next') &&
+    !pathname.startsWith('/favicon.ico')
+  ) {
     return NextResponse.redirect(new URL('/connexion', request.url));
   }
 
