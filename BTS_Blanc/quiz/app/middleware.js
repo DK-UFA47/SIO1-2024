@@ -4,7 +4,7 @@ import { getToken } from 'next-auth/jwt';
 export async function middleware(request) {
   	const { pathname } = request.nextUrl;
   	const token = await getToken({ req: request, secret: process.env.NEXTAUTH_SECRET });
-
+	
   	if (
   	  	token &&
   	  	(pathname.startsWith('/connexion') || pathname.startsWith('/inscription'))
@@ -25,6 +25,13 @@ export async function middleware(request) {
   	if (
   	  	pathname.startsWith('/gestion_quiz') &&
   	  	(!token || token.role !== 'formateur')
+  	) {
+  	  	return NextResponse.redirect(new URL('/', request.url));
+  	}
+
+	if (
+  	  	pathname.startsWith('/quiz') &&
+  	  	(!token || token.role !== 'stagiaire')
   	) {
   	  	return NextResponse.redirect(new URL('/', request.url));
   	}
