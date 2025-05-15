@@ -17,10 +17,10 @@ export default async function RootLayout({ children }) {
   	  	  	</head>
   	  	  	<body className="min-h-full flex">
   	  	  	  	<div className="flex flex-row w-full">
-  	  	  	  	  	<aside className="sticky top-0 z-50 h-screen">
+  	  	  	  	  	<aside className="sticky top-0 z-50 bg-gradient-to-b from-blue-100 to-green-300 h-screen">
   	  	  	  	  	  	<SideNav />
   	  	  	  	  	</aside>
-  	  	  	  	  	<main className="flex-grow p-4">
+  	  	  	  	  	<main className="flex-grow">
   	  	  	  	  	  	{children}
   	  	  	  	  	</main>
   	  	  	  	</div>
